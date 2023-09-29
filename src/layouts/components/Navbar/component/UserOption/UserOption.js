@@ -59,7 +59,7 @@ function UserOption({ hide }) {
       const formDataArtwork = new FormData();
       formDataArtwork.append('artwork', data.fileImg[0]);
       const { data: resDataArtwork } = await requestApi(
-        '/songs/upload-art',
+        'songs/upload-art',
         'POST',
         formDataArtwork,
       );
