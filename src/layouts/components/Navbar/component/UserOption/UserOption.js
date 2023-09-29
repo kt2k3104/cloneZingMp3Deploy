@@ -247,6 +247,7 @@ function UserOption({ hide }) {
                         name="fileSong"
                         className={cx('fileSong_input')}
                         id="fileSong"
+                        accept=".mp3"
                         placeholder="URL"
                         {...register('fileSong', { required: true })}
                       />
@@ -257,6 +258,7 @@ function UserOption({ hide }) {
                         name="fileImg"
                         className={cx('fileImg_input')}
                         id="fileImg"
+                        accept=".jpg, .png, .jpeg"
                         placeholder="URL"
                         {...register('fileImg', { required: true })}
                       />
