@@ -55,7 +55,7 @@ function NotifyMenu(attrs) {
   const convertTime = (created_at) => {
     const createdAtDate = new Date(created_at);
     const currentTime = new Date();
-    const timeDifference = currentTime - createdAtDate + 2000;
+    const timeDifference = currentTime - createdAtDate + 4000;
     const secondsDifference = Math.floor(timeDifference / 1000);
     const minutesDifference = Math.floor(secondsDifference / 60);
     const hoursDifference = Math.floor(minutesDifference / 60);
