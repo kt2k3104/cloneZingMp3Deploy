@@ -1,0 +1,285 @@
+@import '../../../../../components/GlobalStyles/valiables.scss';
+@import '../../../../../components/GlobalStyles/mixins.scss';
+
+.menu-list {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  @include flex($direction: column, $jutify: flex-start);
+
+  & li {
+    list-style-type: none;
+  }
+}
+
+.user-setting-account {
+  width: 338px;
+  height: 132px;
+  padding: 10px;
+  margin-bottom: 10px;
+
+  & .info {
+    height: 64px;
+    margin-bottom: 16px;
+    @include flex($jutify: flex-start, $gap: 12px);
+  }
+
+  & a {
+    display: block;
+    background: $alpha-bg;
+    width: 100%;
+    height: 32px;
+    text-align: center;
+    padding: 6px 0;
+    line-height: 20px;
+    letter-spacing: 0.015em;
+    border-radius: 22px;
+    @include text-style($size: 1.3rem, $color: $text-primary, $weight: 500);
+    text-decoration: none;
+  }
+}
+
+.avt-frame {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  & img {
+    width: 120%;
+    height: auto;
+  }
+  &:hover .avt_hover {
+    opacity: 1;
+  }
+  &:hover img {
+    filter: brightness(0.5);
+  }
+}
+.avt_hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  @include flex();
+  font-size: 12px;
+  border-radius: 50%;
+  opacity: 0;
+  svg {
+    font-size: 16px;
+    cursor: pointer;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.name {
+  height: 42.2px;
+
+  & .name_title,
+  & .form_edit_name {
+    width: 240px;
+    margin: 0 0 4px 0;
+    @include text-style($weight: 700, $color: $text-primary);
+    line-height: 19px;
+    @include flex();
+    & i {
+      margin-left: auto;
+      &:hover {
+        opacity: 0.9;
+        cursor: pointer;
+      }
+    }
+    .err_input {
+      border: 2px red solid;
+    }
+  }
+  & label {
+    font-size: 1.4rem;
+    margin-right: 3px;
+  }
+}
+
+.user-setting-subscription {
+  width: 100%;
+  height: 393px;
+  padding: 0 10px;
+  margin-bottom: 12px;
+
+  & h3 {
+    line-height: 19px;
+    @include text-style($color: $text-primary, $weight: 600);
+    margin-bottom: 8px;
+  }
+  .package-container {
+    width: 100%;
+    height: 177px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+
+    & h2 {
+      @include text-style($size: 2.4rem, $color: $plus-package, $weight: 700);
+      line-height: 29px;
+      margin-bottom: 4px;
+      @include flex($jutify: flex-start, $gap: 1px);
+    }
+    & h3 {
+      @include text-style($size: 1.4rem, $color: #141414, $weight: 600);
+      line-height: 20px;
+      margin-bottom: 4px;
+    }
+    & p {
+      @include text-style($size: 1.4rem, $color: rgba(20, 20, 20, 0.8), $weight: 400);
+      line-height: 20px;
+      margin-bottom: 16px;
+    }
+    & a {
+      display: block;
+      width: 50%;
+      @include text-style($size: 1.3rem, $color: #fff, $weight: 600);
+      line-height: 20px;
+      text-align: center;
+      padding: 6px 24px;
+      border-radius: 100px;
+      background-color: $plus-package;
+    }
+  }
+  .plus {
+    background: url(https://zjs.zmdcdn.me/zmp3-desktop/releases/v1.9.63/static/media/subscription-package-plus.33ae1d19.png)
+      50% / cover no-repeat;
+
+    & svg {
+      width: 58px;
+      height: 20px;
+    }
+  }
+  .premium {
+    background: url(https://zjs.zmdcdn.me/zmp3-desktop/releases/v1.9.63/static/media/subscription-package-premium.73768ec4.png)
+      50% / cover no-repeat;
+
+    & svg {
+      width: 90px;
+      height: 20px;
+    }
+    & h2 {
+      color: $premium-package;
+    }
+    & a {
+      background-color: $premium-package;
+    }
+  }
+}
+
+.line-separator {
+  height: 1px;
+  background-color: $border-primary;
+  width: calc(100% - 24px);
+  margin: 10px auto;
+}
+
+.user-setting-individual {
+  width: 100%;
+  height: 115px;
+  display: block;
+  user-select: none;
+
+  & h3 {
+    height: 19px;
+    margin: 0;
+    margin-bottom: 8px;
+    color: $text-primary;
+    padding: 0 12px;
+  }
+
+  & li {
+    height: 44px;
+    @include flex($jutify: flex-start, $gap: 12px);
+    @include text-style($color: #dadada);
+    padding: 0 12px;
+
+    &:hover {
+      background-color: $color-hover-item;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  }
+}
+
+.logout {
+  width: 100%;
+  height: 44px;
+  margin: 0;
+  padding: 12px;
+  @include flex($jutify: flex-start, $gap: 12px);
+  @include text-style($color: #dadada);
+  user-select: none;
+
+  &:hover {
+    background-color: $color-hover-item;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+}
+
+.btn-login {
+  width: 318px;
+  height: 44px;
+  margin: 10px 10px 20px;
+  padding: 12px 10px;
+  line-height: 20px;
+  background-color: $purple-primary;
+  border-radius: 20px;
+  @include text-style($size: 1.4rem, $color: #fff, $weight: 600);
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.form {
+  width: 500px;
+  margin: 0 auto;
+  @include flex($direction: column);
+
+  & label,
+  & input {
+    display: block;
+    width: 100%;
+  }
+
+  & input {
+    display: block;
+    padding: 0.8rem;
+    outline: none;
+    font-size: inherit;
+    font-family: inherit;
+    margin-top: 1rem;
+    margin-bottom: 1.1rem;
+    border: 1px solid lightgrey;
+  }
+
+  & input {
+    color: #333;
+  }
+
+  & .fileSong_input,
+  & .fileImg_input {
+    color: #dadada;
+  }
+  & button {
+    background-color: $purple-primary;
+    border: none;
+    border-radius: 5px;
+    @include text-style($size: 1.4rem, $color: $text-primary, $weight: 600);
+    width: 100%;
+    height: 44px;
+    margin-top: 20px;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}

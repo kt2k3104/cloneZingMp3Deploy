@@ -1,0 +1,70 @@
+@import '../../../../../components/GlobalStyles/mixins.scss';
+@import '../../../../../components/GlobalStyles/valiables.scss';
+
+.main {
+  width: 100%;
+  height: 192px;
+  margin-bottom: 16px;
+}
+
+.noactive,
+.isActive,
+.item {
+  width: 100%;
+  height: 48px;
+  padding: 12px 21px 12px 0;
+  line-height: 20px;
+  text-decoration: none;
+  @include text-style($size: 1.4rem, $color: #dadada, $weight: 500);
+  @include flex($jutify: flex-start, $gap: 12px);
+
+  &:hover {
+    color: $text-item-hover;
+  }
+}
+
+.item {
+  padding-left: 23px;
+}
+.item-live {
+  @include flex($jutify: flex-start, $gap: 8px);
+}
+.isActive {
+  color: #fff;
+  background-color: $color-hover-item;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 2px;
+    height: 48px;
+    margin-right: 9px;
+    background-color: $purple-primary;
+  }
+}
+
+.title {
+  display: none;
+  @include responsive($breakpoint: $breakpoint-l) {
+    display: flex;
+  }
+}
+
+.playicon {
+  display: flex;
+  margin-left: auto;
+  font-size: 18px;
+  display: none;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+@include responsive($breakpoint: $breakpoint-l) {
+  .item:hover > .playicon,
+  .isActive:hover > .playicon,
+  .noactive:hover > .playicon {
+    display: inline-block;
+  }
+}

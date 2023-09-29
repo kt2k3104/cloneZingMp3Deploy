@@ -1,0 +1,51 @@
+@import '../../.././../components/GlobalStyles/mixins.scss';
+@import '../../.././../components/GlobalStyles/valiables.scss';
+
+.wrapper {
+  border-radius: 16px;
+  background-color: $chart-box-bg-alpha;
+  padding: 16px 10px 20px;
+  position: relative;
+}
+
+.title {
+  @include flex($jutify: flex-start, $gap: 5px);
+  padding: 0 0 5px 40px;
+  @include text-style($size: 2.4rem, $color: $text-item-hover, $weight: 700);
+  svg {
+    font-size: 26px;
+    color: $purple-primary;
+    background-color: #fff;
+    border-radius: 50%;
+    &:hover {
+      cursor: pointer;
+      opacity: 0.9;
+    }
+  }
+  &:hover h2 {
+    cursor: pointer;
+    color: $purple-primary;
+  }
+}
+
+.content {
+  margin-bottom: 15px;
+}
+
+.btn {
+  @include flex();
+  button {
+    border-radius: 999px;
+    border: 1px solid $text-item-hover;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.43;
+    text-align: center;
+    color: $text-item-hover;
+    padding: 8px 25px;
+
+    &:hover {
+      background-color: $alpha-bg;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@import '../../../../../components/GlobalStyles/valiables.scss';
+@import '../../../../../components/GlobalStyles/mixins.scss';
+
+.left {
+  width: 30%;
+  height: 64px;
+  @include flex($jutify: flex-start);
+
+  & .avt-song {
+    width: 64px;
+    height: 64px;
+    margin-right: 10px;
+    & img {
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+    }
+  }
+}
+.info-song {
+  & div {
+    @include text-style($size: 1.4rem, $weight: 500);
+    // -webkit-mask-image: linear-gradient(270deg, transparent 0.5%, #000 10%);
+  }
+
+  & h3 {
+    margin: 0;
+    @include text-style($size: 1.17rem, $color: hsla(0, 0%, 100%, 0.5), $weight: 500);
+  }
+}
+.option-song {
+  margin-left: 14px;
+  @include flex($gap: 4px);
+
+  & button {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background-color: hsla(0, 0%, 100%, 0.1);
+      border-radius: 50%;
+    }
+  }
+}
+
+.purple-heart {
+  color: $purple-primary;
+}

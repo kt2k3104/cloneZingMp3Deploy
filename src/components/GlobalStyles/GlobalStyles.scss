@@ -1,0 +1,60 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import './mixins.scss';
+@import './valiables.scss';
+:root {
+  --text-primary: #fff;
+  --layout-bg: #170f23;
+  --layout-header-bg: hsla(0, 0%, 100%, 0.8);
+  --sticky-header-box-shadow: rgba(0, 0, 0, 0.08);
+  --purple-primary: #9b4de0;
+  --link-text-hover: #c273ed;
+  //   --alpha-bg: hsla(0, 0%, 100%, 0.1);
+  --primary-bg: #34224f;
+  --search-text: #eee;
+  --text-secondary: hsla(0, 0%, 100%, 0.5);
+  --border-primary: hsla(0, 0%, 100%, 0.1);
+  --progressbar-active-bg: #fff;
+  --progressbar-player-bg: hsla(0, 0%, 100%, 0.3);
+
+  --padding-section: 59px;
+
+  --img-logo-mp3: url(https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/backgrounds/logo-dark.svg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  text-rendering: optimizeSpeed;
+  // font-size: 1.6rem;
+  line-height: 1.5;
+  font-size: 14px;
+  color: var(--text-primary);
+  background-color: var(--layout-bg);
+  background-color: #061c4f;
+  // background-image: url(https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/theme-background/rose.jpg);
+  font-weight: 400;
+  overflow: hidden;
+  user-select: none;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  }
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset #fff;
+    border-radius: 4px;
+  }
+}

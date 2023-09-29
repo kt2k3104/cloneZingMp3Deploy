@@ -1,0 +1,27 @@
+@import '../../../../components/GlobalStyles/mixins.scss';
+@import '../../../../components/GlobalStyles/valiables.scss';
+
+.new_release {
+  margin-bottom: 24px;
+  position: relative;
+  .title {
+    margin-bottom: 20px;
+    @include text-style($size: 2rem, $color: $text-primary, $weight: 700);
+  }
+  .btn_all {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 66.43px;
+    height: 18px;
+    @include text-style($size: 1.2rem, $color: $text-secondary, $weight: 500);
+    svg {
+      margin-left: 2px;
+      font-size: 16px;
+    }
+    &:hover {
+      color: $purple-primary;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+@import '../../../../../components/GlobalStyles/mixins.scss';
+@import '../../../../../components/GlobalStyles/valiables.scss';
+
+.wrapper {
+  width: 100%;
+  min-width: 142.1px;
+
+  .img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    border-radius: 5px;
+
+    img {
+      width: 100%;
+      transition: transform 0.4s linear;
+    }
+    &:hover > .img_hover {
+      opacity: 1;
+    }
+    &:hover img {
+      filter: brightness(55%);
+      transform: scale(1.07);
+    }
+  }
+  h3 {
+    margin-top: 12px;
+    width: 100%;
+    @include text-style($size: 1.4rem, $color: $text-secondary, $weight: 400);
+  }
+}
+.hideplaylist {
+  display: none;
+  @include responsive($breakpoint: $breakpoint-xl) {
+    display: block;
+  }
+}
+
+.img_hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  @include flex($jutify: space-evenly);
+  font-size: 20px;
+  opacity: 0;
+
+  & .btn_play {
+    font-size: 45px;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+  & .purple_heart {
+    color: $purple-primary;
+  }
+  & button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: none;
+    &:hover {
+      background-color: hsla(0, 0%, 100%, 0.3);
+    }
+  }
+}

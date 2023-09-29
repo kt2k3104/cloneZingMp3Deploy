@@ -1,0 +1,64 @@
+@import '../../../../../components/GlobalStyles/mixins.scss';
+@import '../../../../../components/GlobalStyles/valiables.scss';
+
+.form_edit_name {
+  width: 240px;
+  margin: 0 0 4px 0;
+  @include text-style($weight: 700, $color: $text-primary);
+  line-height: 19px;
+  @include flex($jutify: flex-start);
+  position: relative;
+
+  & i {
+    margin-left: auto;
+    &:hover {
+      opacity: 0.9;
+      cursor: pointer;
+    }
+  }
+  .err_input {
+    border: 2px red solid;
+  }
+
+  .edit_name {
+    height: 100%;
+
+    & div {
+      @include flex($jutify: space-between, $gap: 5px);
+      margin-bottom: 5px;
+    }
+    & label,
+    & input {
+      display: block;
+    }
+    & input {
+      padding: 2px 5px 0;
+      border-radius: 5px;
+      width: 150px;
+      @include text-style($size: 1.4rem, $color: #333, $weight: 600);
+    }
+  }
+
+  button {
+    margin-left: 10px;
+    @include text-style($weight: 600);
+    &:hover {
+      color: $purple-primary;
+    }
+  }
+
+  .btn_close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    @include flex();
+    @include text-style($size: 1.2rem, $color: $text-secondary, $weight: 300);
+    &:hover {
+      color: $text-primary;
+      background-color: $alpha-bg;
+    }
+  }
+}

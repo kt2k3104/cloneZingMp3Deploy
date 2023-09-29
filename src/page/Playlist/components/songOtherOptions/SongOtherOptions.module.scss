@@ -1,0 +1,119 @@
+@import '../../../../components//GlobalStyles//mixins.scss';
+@import '../../../../components//GlobalStyles//valiables.scss';
+
+.song_other_option {
+  width: 280px;
+  background-color: $primary-bg;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px $portal-menu-box-shadow;
+  z-index: 101;
+}
+
+.song-info {
+  @include flex($jutify: flex-start, $gap: 10px);
+  padding: 15px 15px 0;
+  .song-thumb {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    & img {
+      border-radius: 4px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .card-info span {
+    height: 18.2px;
+    max-width: 100%;
+    line-height: 1.3;
+    @include text-style($size: 1.4rem, $color: $text-primary, $weight: 500);
+    cursor: pointer;
+
+    &:hover {
+      color: $purple-primary;
+    }
+  }
+  .card-info h3 {
+    height: 16px;
+    line-height: 1.33;
+    @include text-style($size: 1.2rem, $color: $text-secondary, $weight: 400);
+  }
+}
+
+.list_btn {
+  margin: 15px 15px 10px;
+  @include flex($jutify: space-between);
+  background-color: $alpha-bg;
+  border-radius: 8px;
+  li {
+    width: 80px;
+    height: 50px;
+    @include flex($direction: column, $gap: 4px);
+    padding: 8px 0;
+    font-size: 16px;
+    border-radius: 8px;
+    span {
+      font-size: 1rem;
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: $alpha-bg;
+    }
+  }
+}
+
+.song_other_option > li {
+  list-style-type: none;
+  cursor: pointer;
+  width: 100%;
+  height: 36.8px;
+  padding: 10px 20px 10px 14px;
+  border-radius: 1px;
+  @include flex($jutify: flex-start, $gap: 15px);
+  @include text-style($size: 1.4rem, $color: $text-placeholder, $weight: 400);
+
+  svg {
+    margin-left: auto;
+  }
+  i {
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    @include flex();
+  }
+  &:hover {
+    background-color: $alpha-bg;
+  }
+}
+
+.song_other_option > p {
+  margin: 6px 0 12px;
+  @include text-style($size: 1.3rem, $color: $text-secondary, $weight: 500);
+  text-align: center;
+}
+
+.share-option {
+  line-height: normal;
+  position: absolute;
+  width: 230px;
+  height: 131px;
+  color: #dadada;
+  background-color: $primary-bg;
+  border-radius: 8px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  z-index: 101;
+
+  li {
+    list-style-type: none;
+    width: 100%;
+    height: 37px;
+    padding: 10px 20px 10px 14px;
+    @include flex($jutify: flex-start, $gap: 12px);
+    cursor: pointer;
+
+    &:hover {
+      border-radius: 4px;
+      background-color: $color-hover-item;
+    }
+  }
+}

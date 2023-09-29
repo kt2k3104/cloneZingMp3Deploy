@@ -1,0 +1,82 @@
+@import '../../../../../components/GlobalStyles/mixins.scss';
+@import '../../../../../components/GlobalStyles/valiables.scss';
+
+.wrapper {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  border-radius: 5px;
+  position: relative;
+
+  button {
+    position: absolute;
+    top: 21px;
+    right: 14px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    @include flex();
+    opacity: 0;
+    &:hover {
+      background-color: $alpha-bg;
+    }
+    svg {
+      font-size: 16px;
+      color: $navigation-text;
+    }
+  }
+
+  &:hover {
+    background-color: $alpha-bg;
+
+    button {
+      opacity: 1;
+    }
+  }
+}
+
+.inner {
+  width: 100%;
+  height: 100%;
+  @include flex($jutify: flex-start, $gap: 10px);
+  .song_thumb {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+  }
+  .card_info {
+    width: 100%;
+    @include flex($direction: column, $align: flex-start, $gap: 3px);
+    h3 {
+      width: 100%;
+      font-weight: 500;
+    }
+    span {
+      @include text-style($size: 1.2rem, $color: $text-secondary, $weight: 400);
+    }
+    .artist {
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+        color: $link-text-hover;
+      }
+
+      svg {
+        font-size: 10px;
+        margin-left: 2px;
+        padding-bottom: 1px;
+      }
+    }
+  }
+}
+.is-premium-name {
+  color: $text-secondary;
+  @include flex($jutify: flex-start, $gap: 5px);
+  & svg {
+    width: 56px;
+    height: 14px;
+  }
+}
+.is-premium-artist {
+  opacity: 0.5;
+}

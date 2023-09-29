@@ -1,0 +1,398 @@
+@import '../../../../../components/GlobalStyles/valiables.scss';
+@import '../../../../../components/GlobalStyles/mixins.scss';
+
+.menu-setting {
+  line-height: normal;
+
+  top: 60px;
+  right: -20px;
+  padding: 6px;
+
+  position: absolute;
+  width: 240px;
+  height: 341px;
+  color: #dadada;
+  background-color: $primary-bg;
+  border-radius: 8px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  z-index: 101;
+}
+.menu-list {
+  width: 228px;
+  height: 88px;
+  padding: 0;
+  margin: 0;
+}
+.header-dropdown-setting {
+  position: relative;
+  border-radius: 4px;
+  list-style-type: none;
+
+  &:hover {
+    background-color: $color-hover-item;
+  }
+}
+.header-dropdown-setting button {
+  @include flex();
+  padding: 12px 10px;
+  height: 44px;
+  width: 100%;
+  font-size: 14px;
+  line-height: normal;
+  font-weight: 400;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  color: inherit;
+  word-break: normal;
+}
+.icon-play {
+  font-size: 20px;
+}
+.header-dropdown-setting button span {
+  margin-left: 12px;
+}
+.icon-right {
+  margin-left: auto;
+  font-size: 16px;
+}
+
+.line-separator {
+  height: 1px;
+  background-color: $border-primary;
+  width: calc(100% - 24px);
+  margin: 10px auto;
+}
+
+.footer {
+  margin-top: auto;
+  font-size: 12px;
+  color: $text-secondary;
+}
+.menu-list-footer {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.menu-list-footer li {
+  color: $text-secondary;
+  line-height: normal;
+  border-radius: 4px;
+}
+.menu-list-footer li:hover {
+  background-color: $color-hover-item;
+}
+.menu-list-footer li a {
+  height: 44px;
+  padding: 12px 10px;
+  font-size: 14px;
+  color: #ffffff80;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.icon-footer-left {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  font-size: 16px;
+}
+.icon-footer-right {
+  margin-left: auto;
+}
+
+.tpn-menu {
+  line-height: normal;
+
+  top: -32px;
+  right: -8px;
+  padding: 6px;
+
+  background-color: $primary-bg;
+  border-radius: 8px;
+  position: absolute;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  width: 320px;
+  height: 508px;
+  z-index: 101;
+  color: #dadada;
+  @include flex($direction: column, $jutify: flex-start);
+
+  & li {
+    list-style-type: none;
+  }
+}
+.song-transition-setting {
+  width: 308px;
+  height: 198px;
+  padding: 0 10px;
+}
+
+.song-transition-setting h3 {
+  height: 40px;
+  margin: 0;
+  padding: 0 2px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  color: $text-primary;
+  text-transform: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.icon-plus {
+  width: 36px;
+  height: 14px;
+}
+.crossfade-setting {
+  width: 288px;
+  height: 92px;
+  padding: 12px 0;
+
+  & button {
+    width: 100%;
+    height: 20px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    color: #dadada;
+
+    &:hover {
+      color: $text-item-hover;
+    }
+  }
+
+  & .duration-bar {
+    width: 278px;
+    height: 15px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    opacity: 0.5;
+
+    & div {
+      width: 100%;
+      height: 3px;
+      border-radius: 4px;
+      background: linear-gradient(
+        to right,
+        var(--progressbar-active-bg) 0%,
+        var(--progressbar-active-bg) 50%,
+        var(--progressbar-player-bg) 50%,
+        var(--progressbar-player-bg) 100%
+      );
+      align-self: center;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+  & .time-crossfade {
+    margin: 8px 0 0 0;
+    @include flex();
+  }
+}
+.crossfade-setting:hover {
+  color: $text-item-hover;
+}
+
+.gapless-setting {
+  width: 288px;
+  height: 66px;
+  padding: 12px 0;
+
+  & button {
+    width: 100%;
+    height: 20px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    background-color: transparent;
+    border: none;
+    color: #dadada;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+
+    &:hover {
+      color: $text-item-hover;
+    }
+  }
+
+  & h3 {
+    height: 18px;
+    margin-top: 4px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: $text-secondary;
+  }
+}
+
+.ditmemay {
+  width: 284px;
+  height: 1px;
+  background-color: $border-primary;
+}
+
+.quality-setting {
+  width: 308px;
+  height: 172px;
+  list-style-type: none;
+  padding: 0 10px;
+
+  & h3 {
+    height: 40px;
+    @include text-style($weight: 700);
+    line-height: 19px;
+    color: $text-primary;
+    display: flex;
+    align-items: center;
+    padding: 0 2px;
+    text-transform: none;
+    margin: 0;
+  }
+
+  & div {
+    height: 132px;
+
+    & button {
+      width: 288px;
+      height: 44px;
+      border: none;
+      padding: 0;
+      color: $text-primary;
+      background-color: transparent;
+      @include flex($jutify: space-between);
+
+      & span:hover {
+        cursor: pointer;
+        color: $purple-primary;
+      }
+      & i {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.more-setting {
+  width: 100%;
+  padding: 0 10px;
+
+  .featured-title {
+    height: 40px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: $text-primary;
+    display: flex;
+    align-items: center;
+    padding: 0 2px;
+    text-transform: none;
+    margin-bottom: 0;
+  }
+  & .last-btn {
+    width: 288px;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    line-height: 20px;
+    @include text-style($size: 1.4rem, $weight: 400, $color: #dadada);
+    @include flex($jutify: flex-start);
+
+    &:hover {
+      color: $text-item-hover;
+    }
+  }
+}
+
+.hehe {
+  color: $purple-primary;
+}
+
+// giao dien menu
+.gd-menu {
+  line-height: normal;
+
+  top: -25px;
+  right: -15px;
+  padding: 6px;
+
+  position: absolute;
+  width: 320px;
+  height: 162px;
+  color: #dadada;
+  background-color: $primary-bg;
+  border-radius: 8px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  z-index: 101;
+
+  list-style-type: none;
+}
+.theme-setting {
+  width: 308px;
+  height: 81px;
+  padding: 0 10px;
+  margin-bottom: 14px;
+
+  & .top-theme {
+    height: 17px;
+    @include flex($jutify: space-between);
+    color: #dadada;
+    padding: 5px;
+
+    &:hover {
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+
+  & .content-theme {
+    width: 100%;
+    padding: 0;
+    margin-top: 8px;
+    @include flex($jutify: flex-start, $gap: 8px);
+    cursor: pointer;
+
+    & figure {
+      width: 86px;
+      height: 56px;
+      margin: 0;
+
+      & img {
+        width: 86px;
+        height: 56px;
+      }
+    }
+  }
+}
+
+.theme-footer {
+  padding: 0 10px;
+
+  & button {
+    border: none;
+    line-height: 20px;
+    @include text-style($size: 1.4rem, $color: #dadada, $weight: 400);
+    background-color: transparent;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}

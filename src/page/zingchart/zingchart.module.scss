@@ -1,0 +1,84 @@
+@import '../../components/GlobalStyles/mixins.scss';
+@import '../../components/GlobalStyles/valiables.scss';
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding: 0 $padding-section;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &:hover::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    background-color: $scroll-thumb-bg;
+  }
+}
+
+.header {
+  width: 100%;
+  margin-bottom: 40px;
+  padding-top: 40px;
+  @include flex($jutify: flex-start, $gap: 14px);
+  h3 {
+    background: radial-gradient(50% 124.93% at 95.86% -10%, #3efad9 0, hsla(0, 0%, 100%, 0) 100%),
+      linear-gradient(91.56deg, #ff9357 1.54%, #9100ff 98.71%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+  }
+  svg {
+    font-size: 36px;
+    margin-top: 8px;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+.week_chart_section {
+  width: 100%;
+  margin-top: 28px;
+  padding-top: 34px;
+  position: relative;
+  .bg-alpha,
+  .bg-blur {
+    margin: 0 -59px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  .bg-blur {
+    z-index: 0;
+    background: url(https://zjs.zmdcdn.me/zmp3-desktop/releases/v1.9.67/static/media/week-chart-bg.edf332e5.jpg)
+      center top / cover no-repeat;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+  }
+  .bg-alpha {
+    background-color: $chart-bg-img-alpha;
+  }
+  .title {
+    margin-bottom: 15px;
+    @include text-style($size: 4rem, $color: $text-item-hover, $weight: 800);
+    position: relative;
+  }
+  .content {
+    display: grid;
+    @include responsive($breakpoint: $breakpoint-xxl) {
+      grid-template-columns: 31.8% 31.8% 31.8%;
+      gap: 2.5%;
+    }
+    grid-template-columns: 98%;
+    gap: 2.5%;
+  }
+  padding-bottom: 30px;
+}

@@ -1,0 +1,37 @@
+@import '../../../../components/GlobalStyles/mixins.scss';
+@import '../../../../components/GlobalStyles/valiables.scss';
+
+.wrapper {
+  width: 100%;
+  margin-bottom: 48px;
+}
+
+.title {
+  width: 100%;
+  @include flex($jutify: space-between);
+  margin-bottom: 20px;
+  @include text-style($size: 2rem, $color: $text-primary, $weight: 700);
+
+  span {
+    @include text-style($size: 1.2rem, $color: $text-secondary, $weight: 500);
+    svg {
+      margin-left: 2px;
+      font-size: 16px;
+    }
+    &:hover {
+      color: $purple-primary;
+      cursor: pointer;
+    }
+  }
+}
+
+.content {
+  width: 100%;
+  min-width: 767px;
+  display: grid;
+  @include responsive($breakpoint: $breakpoint-xl) {
+    grid-template-columns: 18.6% 18.6% 18.6% 18.6% 18.6%;
+  }
+  grid-template-columns: 23.6% 23.6% 23.6% 23.6%;
+  gap: 1.75%;
+}

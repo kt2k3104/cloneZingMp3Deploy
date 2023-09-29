@@ -1,0 +1,140 @@
+@import '../../../../../components/GlobalStyles/valiables.scss';
+@import '../../../../../components/GlobalStyles/mixins.scss';
+
+.wrapper {
+  width: 100%;
+  &:hover .right {
+    display: flex;
+  }
+  &:hover .song-thumb-active {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #333333a1;
+    @include flex();
+    font-size: 18px;
+    cursor: pointer;
+
+    & svg:hover {
+      opacity: 0.8;
+    }
+  }
+  &:hover .card-info {
+    gap: 2px;
+
+    .name {
+      display: block;
+      width: 160px;
+      height: 16.8px;
+      overflow: hidden;
+    }
+  }
+}
+.inner {
+  height: 56px;
+  padding: 8px;
+  border-radius: 5px;
+  @include flex($jutify: space-between);
+}
+.song-thumb-active {
+  display: none;
+}
+.isActive {
+  // background-color: $purple-primary;
+  background-color: #3560f5;
+
+  & .song-thumb-active {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #333333a1;
+    @include flex();
+    font-size: 18px;
+    cursor: pointer;
+
+    & svg:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.noActive:hover {
+  background-color: $alpha-bg;
+}
+
+.left {
+  @include flex($jutify: flex-start, $gap: 10px);
+}
+.song-thumb {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  & img {
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.card-info {
+  @include flex($direction: column, $align: flex-start, $jutify: space-between);
+}
+.card-info span {
+  height: 18.2px;
+  max-width: 100%;
+  line-height: 1.3;
+  white-space: nowrap;
+  @include text-style($size: 1.4rem, $color: $text-primary, $weight: 500);
+}
+.card-info h3 {
+  height: 16px;
+  line-height: 1.33;
+  @include text-style($size: 1.2rem, $color: $text-secondary, $weight: 400);
+}
+
+.right {
+  width: 68px;
+  height: 26px;
+  @include flex($jutify: space-around);
+  display: none;
+
+  & button {
+    width: 26px;
+    height: 26px;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      border-radius: 50%;
+      cursor: pointer;
+      background-color: $alpha-bg;
+    }
+  }
+}
+.show_btn {
+  display: flex;
+}
+
+.heart-purple {
+  color: $purple-primary;
+}
+.heart-whrite {
+  color: #fff;
+}
+
+.next-song {
+  height: 41px;
+  padding: 15px 8px 5px 8px;
+  & h3 {
+    @include text-style($size: 1.4rem, $weight: 700);
+    margin: 0;
+  }
+}

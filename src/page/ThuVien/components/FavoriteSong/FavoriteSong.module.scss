@@ -1,0 +1,119 @@
+@import '../../../../components//GlobalStyles//mixins.scss';
+@import '../../../../components//GlobalStyles//valiables.scss';
+
+.wrapper {
+  width: 100%;
+  height: 60px;
+  padding: 10px;
+  border-radius: 5px;
+  @include flex($jutify: space-between);
+  border-bottom: 1px solid $alpha-bg;
+  &:hover {
+    background-color: $alpha-bg;
+    border: none;
+  }
+
+  &:hover .song-thumb-active {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #333333a1;
+    @include flex();
+    font-size: 18px;
+    cursor: pointer;
+
+    & svg:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.left {
+  width: 50%;
+  @include flex($jutify: flex-start, $gap: 10px);
+
+  & .music_icon {
+    @include text-style($size: 1.2rem, $color: hsla(0, 0%, 100%, 0.5), $weight: 700);
+  }
+  & .song-thumb {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    & img {
+      border-radius: 4px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .song-thumb-active {
+    display: none;
+  }
+}
+.isActive {
+  background-color: $alpha-bg;
+
+  & .song-thumb-active {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #333333a1;
+    @include flex();
+    font-size: 18px;
+    cursor: pointer;
+
+    & svg:hover {
+      opacity: 0.8;
+    }
+  }
+}
+.card-info span {
+  height: 18.2px;
+  max-width: 100%;
+  line-height: 1.3;
+  @include text-style($size: 1.4rem, $color: $text-primary, $weight: 500);
+}
+.card-info h3 {
+  height: 16px;
+  line-height: 1.33;
+  @include text-style($size: 1.2rem, $color: $text-secondary, $weight: 400);
+}
+
+.center {
+  & span {
+    @include text-style($size: 1.2rem, $color: $song-item-action);
+
+    &:hover {
+      color: $purple-primary;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+.right {
+  margin-left: auto;
+
+  button {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    &:hover {
+      background-color: $alpha-bg;
+      filter: brightness(0.9);
+    }
+  }
+
+  .heart_purple {
+    color: $purple-primary;
+  }
+}

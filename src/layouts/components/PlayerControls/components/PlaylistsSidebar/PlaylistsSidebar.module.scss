@@ -1,0 +1,102 @@
+@import '../../../../../components/GlobalStyles/valiables.scss';
+@import '../../../../../components/GlobalStyles/mixins.scss';
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 90px;
+  width: 330px;
+  // background-color: $queue-player-popup-bg;
+  background-color: #223c75;
+  box-shadow: $box-shadow-queue;
+  z-index: 2;
+  cursor: default;
+  transform: translateX(100%);
+  transition: 0.25s linear all;
+  // overflow-y: overlay;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &:hover::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    background-color: $scroll-thumb-bg;
+  }
+}
+
+.header {
+  height: 70px;
+  padding: 14px 0;
+  @include flex($jutify: space-around, $gap: 8px);
+  padding: 0 8px;
+
+  & div {
+    width: 234px;
+    height: 34px;
+    @include flex();
+    padding: 3px;
+    background-color: $alpha-bg;
+    border-radius: 999px;
+
+    & .no-active {
+      background-color: transparent;
+      border: none;
+      border-radius: 999px;
+      padding: 5px 0;
+      cursor: pointer;
+      @include text-style($size: 1.2rem, $color: $navigation-text, $weight: 400);
+      font-family: Inter, sans-serif;
+    }
+  }
+
+  & .header-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: $alpha-bg;
+    border: none;
+    color: $navigation-text;
+    cursor: pointer;
+  }
+}
+
+.is-active {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07);
+  background-color: $tab-active-bg;
+  border-radius: 999px;
+  border: none;
+  padding: 5px 0;
+  cursor: pointer;
+  @include text-style($size: 1.2rem, $color: $text-item-hover, $weight: 500);
+  line-height: 18px;
+  font-family: Inter, sans-serif;
+}
+
+.btn-left {
+  width: 52.2%;
+}
+.btn-right {
+  width: 47.8%;
+}
+
+.show-playlist {
+  transform: translateX(0);
+}
+
+.content {
+  width: 100%;
+  height: calc(100% - 70px);
+  padding: 0 8px;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &:hover::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    background-color: $scroll-thumb-bg;
+  }
+}

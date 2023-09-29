@@ -1,0 +1,107 @@
+@import '../../components/GlobalStyles/mixins.scss';
+@import '../../components/GlobalStyles/valiables.scss';
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding: 40px 59px;
+}
+
+.btn_play {
+  font-size: 45px;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.name_playlist {
+  width: 100%;
+  height: 30px;
+  @include text-style($size: 2rem, $weight: 700);
+  svg {
+    font-size: 16px;
+    margin-left: 5px;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  @include responsive($breakpoint: $breakpoint-xl) {
+    @include flex();
+  }
+}
+
+.artist_playlist,
+.status_playlist {
+  @include text-style($size: 1.2rem, $color: $text-secondary, $weight: 400);
+}
+.artist_playlist {
+  height: 21px;
+}
+.status_playlist {
+  height: 15.2px;
+  margin-top: 2px;
+}
+
+.btn_keep_playing {
+  @include responsive($breakpoint: $breakpoint-xl) {
+    margin: 0 10px 16px 0;
+  }
+  height: 36.4px;
+  font-size: 14px;
+  background-color: $purple-primary;
+  padding: 8px 24px 10px 28px;
+  border-radius: 999px;
+  svg {
+    margin-right: 8px;
+    font-size: 15px;
+  }
+  &:hover {
+    opacity: 0.9;
+  }
+}
+.more_option {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: $alpha-bg;
+  margin-right: 10px;
+  svg {
+    font-size: 16px;
+  }
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.no_content_box {
+  width: 100%;
+  height: 220px;
+  background-color: $alpha-bg;
+  @include flex($direction: column, $gap: 20px);
+  @include text-style($color: $text-secondary, $weight: 400);
+  svg {
+    font-size: 90px;
+  }
+}
+
+.media-playlist-header {
+  width: 100%;
+  padding: 12px 10px 13px;
+  @include flex($jutify: space-between);
+  @include text-style($size: 1.2rem, $color: $text-secondary, $weight: 500);
+  border-bottom: 1px solid $alpha-bg;
+  & .span1 {
+    padding-left: 20px;
+    width: 50%;
+  }
+  & .span2 {
+    width: 40%;
+  }
+  & .span3 {
+    width: 10%;
+    text-align: end;
+    padding-right: 2px;
+  }
+}

@@ -1,0 +1,22 @@
+@import '../../../../../components/GlobalStyles/mixins.scss';
+@import '../../../../../components/GlobalStyles/valiables.scss';
+
+.wrapper {
+  min-width: 142.1px;
+  padding: 0 14px;
+  margin-bottom: 30px;
+}
+
+.hideplaylist {
+  display: none;
+  @include responsive($breakpoint: $breakpoint-xl) {
+    display: block;
+  }
+}
+
+.btn_play {
+  font-size: 45px;
+  &:hover {
+    opacity: 0.9;
+  }
+}
