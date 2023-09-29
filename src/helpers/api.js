@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { REACT_APP_API_URL } from '~/const';
 
 export default function requestApi(endpoint, method, body, responseType = 'json') {
   const headers = {
@@ -39,7 +40,7 @@ export default function requestApi(endpoint, method, body, responseType = 'json'
             throw new Error('Refresh token not found');
           }
           const result = await instance.post(
-            `http://localhost:9000/auth/refresh-token`,
+            `${REACT_APP_API_URL}auth/refresh-token`,
             {
               refresh_token: refreshToken,
             },
@@ -73,7 +74,7 @@ export default function requestApi(endpoint, method, body, responseType = 'json'
 
   return instance.request({
     method: method,
-    url: `${process.env.REACT_APP_API_URL}${endpoint}`,
+    url: `${REACT_APP_API_URL}${endpoint}`,
     data: body,
     responseType: responseType,
   });

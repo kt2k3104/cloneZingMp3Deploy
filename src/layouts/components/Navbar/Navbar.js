@@ -23,6 +23,7 @@ import SearchResult from './component/SearchResult';
 import MenuSetting from './component/MenuSetting';
 import UserOption from './component/UserOption';
 import NotifyMenu from './component/NotifyMenu';
+import { REACT_APP_API_URL } from '~/const';
 
 const cx = classNames.bind(styles);
 
@@ -60,7 +61,7 @@ function Navbar() {
     if (value.trim()) {
       console.log('search');
       const handleSearchSongs = async () => {
-        const result = await axios.get(`http://localhost:9000/songs/search?keyword=${value}`);
+        const result = await axios.get(`${REACT_APP_API_URL}songs/search?keyword=${value}`);
         console.log(result);
         setSearchResults(result.data.result);
       };

@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { REACT_APP_API_URL } from '~/const';
 import requestApi from '~/helpers/api';
 
 const initialState = {
@@ -16,7 +17,7 @@ export const handleLogin = createAsyncThunk('auth/login', async (body, thunkAPI)
   try {
     const { data } = await requestApi('auth/login', 'POST', body);
 
-    const { data: user } = await axios.get(`http://localhost:9000/users/${data.result.id}`, {
+    const { data: user } = await axios.get(`${REACT_APP_API_URL}users/${data.result.id}`, {
       headers: {
         Authorization: `Bearer ${data.result.tokens.access_token}`,
       },

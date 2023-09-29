@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { initSocket } from '~/socket';
 import { useSelector } from 'react-redux';
 import Highlighter from 'react-highlight-words';
+import { REACT_APP_API_URL } from '~/const';
 
 const socket = initSocket();
 
@@ -37,7 +38,7 @@ function NotifyMenu(attrs) {
   useEffect(() => {
     if (isLogined) {
       axios
-        .get('http://localhost:9000/notifications', {
+        .get(`${REACT_APP_API_URL}notifications`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('access_token')}`,
           },

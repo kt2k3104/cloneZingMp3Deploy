@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { REACT_APP_API_URL } from '~/const';
 import requestApi from '~/helpers/api';
 
 const currentSong = {
@@ -25,7 +26,7 @@ const initialStates = {
 
 export const getSongs = createAsyncThunk('listen/getSongs', async (_, thunkAPI) => {
   try {
-    const response = await axios.get('http://localhost:9000/songs');
+    const response = await axios.get(`${REACT_APP_API_URL}songs`);
     return response.data.result;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.response.data);

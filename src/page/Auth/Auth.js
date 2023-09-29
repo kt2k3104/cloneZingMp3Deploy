@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { handleInitLogin, handleLogin } from './UserSlice';
 import { useNavigate } from 'react-router-dom';
 import customIcon from '~/components/UI/Icons/Icons';
+import { REACT_APP_API_URL } from '~/const';
 
 const cx = classNames.bind(styles);
 
@@ -52,7 +53,7 @@ function Auth() {
 
   const onSubmitSignup = async (data) => {
     try {
-      const response = await axios.post('http://localhost:9000/auth/register', {
+      const response = await axios.post(`${REACT_APP_API_URL}auth/register`, {
         first_name: data.firstname,
         last_name: data.lastname,
         email: data.email,
@@ -86,7 +87,7 @@ function Auth() {
 
   const handleLoginWithGoogle = () => {
     let timer = null;
-    const googleLoginURL = 'http://localhost:9000/auth/google/login';
+    const googleLoginURL = `${REACT_APP_API_URL}auth/google/login`;
 
     const newWindow = window.open(
       googleLoginURL,
