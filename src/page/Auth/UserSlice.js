@@ -19,17 +19,9 @@ export const handleLogin = createAsyncThunk('auth/login', async (body, thunkAPI)
 
     console.log(data);
 
-    // const response = await axios.get(`${REACT_APP_API_URL}users/${data.result.id}`, {
-    //   headers: {
-    //     Authorization: `Bearer ${data.result.tokens.access_token}`,
-    //     'ngrok-skip-browser-warning': 'dcmmnguvcl',
-    //   },
-    // });
-    // console.log(response);
     const { data: user } = await axios.get(`${REACT_APP_API_URL}users/${data.result.id}`, {
       headers: {
         Authorization: `Bearer ${data.result.tokens.access_token}`,
-        'ngrok-skip-browser-warning': 'dcmmnguvcl',
       },
     });
     console.log(user);

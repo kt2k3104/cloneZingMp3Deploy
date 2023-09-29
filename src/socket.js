@@ -2,7 +2,7 @@ import { io } from 'socket.io-client';
 
 // "undefined" means the URL will be computed from the `window.location` object
 // const URL = 'http://localhost:9000';
-const URL = 'https://1e86-14-160-26-214.ngrok-free.app/';
+const URL = 'https://music-app-server-w5pu.onrender.com/';
 
 const token = localStorage.getItem('access_token');
 
