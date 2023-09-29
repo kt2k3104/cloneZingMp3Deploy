@@ -6,6 +6,7 @@ export default function requestApi(endpoint, method, body, responseType = 'json'
     Accept: 'application/json',
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*',
+    'ngrok-skip-browser-warning': '69420',
   };
 
   if (body instanceof FormData) {
@@ -33,6 +34,7 @@ export default function requestApi(endpoint, method, body, responseType = 'json'
     },
     async (error) => {
       const originalConfig = error.config;
+      console.log('hahahaha');
       if (error.response && error.response.status === 419) {
         try {
           const refreshToken = localStorage.getItem('refresh_token');

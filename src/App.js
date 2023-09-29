@@ -26,7 +26,7 @@ function App() {
         dispatch(handleInitLogin());
       }
     };
-    handleCheckedUserLogin();
+    // handleCheckedUserLogin();
   }, [dispatch, isLogined]);
 
   useEffect(() => {

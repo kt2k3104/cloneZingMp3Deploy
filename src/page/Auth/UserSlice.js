@@ -17,11 +17,22 @@ export const handleLogin = createAsyncThunk('auth/login', async (body, thunkAPI)
   try {
     const { data } = await requestApi('auth/login', 'POST', body);
 
+    console.log(data);
+
+    // const response = await axios.get(`${REACT_APP_API_URL}users/${data.result.id}`, {
+    //   headers: {
+    //     Authorization: `Bearer ${data.result.tokens.access_token}`,
+    //     'ngrok-skip-browser-warning': 'dcmmnguvcl',
+    //   },
+    // });
+    // console.log(response);
     const { data: user } = await axios.get(`${REACT_APP_API_URL}users/${data.result.id}`, {
       headers: {
         Authorization: `Bearer ${data.result.tokens.access_token}`,
+        'ngrok-skip-browser-warning': 'dcmmnguvcl',
       },
     });
+    console.log(user);
 
     return { tokens: data.result.tokens, user: user.result };
   } catch (error) {
@@ -183,6 +194,7 @@ const userSlice = createSlice({
   extraReducers(bullder) {
     bullder
       .addCase(handleLogin.fulfilled, (state, action) => {
+        console.log(action.payload);
         localStorage.setItem('access_token', action.payload.tokens.access_token);
         localStorage.setItem('refresh_token', action.payload.tokens.refresh_token);
         state.isLogined = true;
