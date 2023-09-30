@@ -46,9 +46,6 @@ function ModalAddPlaylist({ isOpen, onClose, playlist }) {
   const onSubmitAddPlaylist = async (data) => {
     try {
       await dispatch(handleAddPlaylist({ name: data.playlist })).unwrap();
-      // setTimeout(() => {
-      //   navigate(`/playlist`, { state: { playlistId: playlists[playlists.length - 1].id } });
-      // }, 500);
       reset();
       toast({
         position: 'bottom-left',

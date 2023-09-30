@@ -215,7 +215,7 @@ const userSlice = createSlice({
       })
       .addCase(handleAddPlaylist.fulfilled, (state, action) => {
         state.playlists.push(action.payload);
-        state.afterAddPlaylistNavigatePath = `/playlist?id=${action.payload.id}`;
+        state.afterAddPlaylistNavigatePath = `/playlist/${action.payload.id}`;
       })
       .addCase(handleUpdatePlaylist.fulfilled, (state, action) => {
         state.playlists.forEach((playlist) => {
