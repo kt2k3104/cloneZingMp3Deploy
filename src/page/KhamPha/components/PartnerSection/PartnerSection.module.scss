@@ -21,6 +21,7 @@
     background-color: #f7f7f7;
     border-radius: 5px;
     @include flex();
+    min-height: 64px;
     height: 12.9vh;
     img{
       max-width: 90%;
