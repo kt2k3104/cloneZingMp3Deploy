@@ -111,7 +111,7 @@ function MenuSetting(attrs) {
                         alt="theme"
                       />
                     </figure>
-                    <h3>Tím</h3>
+                    <h3>Rose</h3>
                   </div>
                 </div>
               </li>
