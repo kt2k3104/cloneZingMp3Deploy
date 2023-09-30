@@ -48,13 +48,10 @@ function UserOption({ hide }) {
   const onSubmitUploadSong = async (data) => {
     try {
       setIsLoading(true);
-      console.log('cbi tai nhac');
 
       const formDataUrl = new FormData();
       formDataUrl.append('song', data.fileSong[0]);
       const { data: resDataSong } = await requestApi('songs/upload-audio', 'POST', formDataUrl);
-
-      console.log('tai nhac xong, cbi tai anh');
 
       const formDataArtwork = new FormData();
       formDataArtwork.append('artwork', data.fileImg[0]);
@@ -63,8 +60,6 @@ function UserOption({ hide }) {
         'POST',
         formDataArtwork,
       );
-
-      console.log('xong');
 
       await dispatch(
         handleUploadSong({
@@ -75,7 +70,9 @@ function UserOption({ hide }) {
           duration: Math.round(resDataSong.result.duration),
         }),
       ).unwrap();
+      
       reset();
+      onClose();
       setIsLoading(false);
       toast({
         position: 'bottom-left',

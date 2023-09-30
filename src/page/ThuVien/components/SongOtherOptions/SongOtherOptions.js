@@ -279,17 +279,15 @@ function SongOtherOptions({ attrs, song, hide, type }) {
                     sx={css.button2}
                     onClick={async () => {
                       setOnDelete(true);
-                      const response = await dispatch(deleteSong(song.id)).unwrap();
+                      await dispatch(deleteSong(song.id)).unwrap();
                       setOnDelete(false);
-                      if (response) {
-                        onCloseModaDelete();
-                        toast({
-                          position: 'bottom-left',
-                          render: () => <Box sx={css.box}>Xóa bài hát thành công !</Box>,
-                        });
-                        dispatch(getUser(user.id));
-                        dispatch(getSongs());
-                      }
+                      onCloseModaDelete();
+                      toast({
+                        position: 'bottom-left',
+                        render: () => <Box sx={css.box}>Xóa bài hát thành công !</Box>,
+                      });
+                      dispatch(getUser(user.id));
+                      dispatch(getSongs());
                     }}
                   >
                     XÓA

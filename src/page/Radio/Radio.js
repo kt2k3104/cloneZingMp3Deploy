@@ -22,37 +22,37 @@ export default Radio;
 
 const radioData = [
   {
-    img: '/assets/img/khampha/radionoibat/2.png',
+    img: 'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/b/1/6/a/b16ac2732018aa6684c5b1265b6c7d61.jpg',
     title: 'XONE Radio',
-    subtitle: '68 đang nghe',
+    subtitle: '71 đang nghe',
   },
   {
-    img: '/assets/img/khampha/radionoibat/3.png',
+    img: 'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/f/d/7/9/fd79808d2180de9a421afa6aff38953e.jpg',
     title: 'V-POP',
     subtitle: '665 đang nghe',
   },
   {
-    img: '/assets/img/khampha/radionoibat/4.png',
-    title: 'Pladio',
+    img: 'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/b/c/2/1/bc2115886f2e2e9f7cf2fa28a39cda12.jpg',
+    title: 'K-POP',
     subtitle: '50 đang nghe',
   },
   {
-    img: '/assets/img/khampha/radionoibat/5.png',
+    img: 'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/e/2/3/5/e235117d191db9f7bbc82a3d31f17e60.jpg',
     title: 'Chạm',
     subtitle: '113 đang nghe',
   },
   {
-    img: '/assets/img/khampha/radionoibat/6.png',
-    title: 'On Air',
+    img: 'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/e/f/b/0/efb05fb9097a7057aecef6ecb62bff5a.jpg',
+    title: 'Acoustic',
     subtitle: '38 đang nghe',
   },
   {
-    img: '/assets/img/khampha/radionoibat/7.png',
+    img: 'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/4/8/c/e/48cefd41cfc03533d52303190f47e6ef.jpg',
     title: 'Bolero',
     subtitle: '431 đang nghe',
   },
   {
-    img: '/assets/img/khampha/radionoibat/8.png',
+    img: 'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/d/4/f/f/d4ffcd5734d4dae6266fec08719324f0.jpg',
     title: 'US-UK',
     subtitle: '68 đang nghe',
   },
