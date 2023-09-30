@@ -25,3 +25,14 @@
   gap: 1.8%;
   row-gap: 5%;
 }
+
+.content div{
+  background-color: #f7f7f7;
+  @include flex();
+  height: 12.9vh;
+
+  img{
+    max-width: 90%;
+    max-height: 80%;
+  }
+}
