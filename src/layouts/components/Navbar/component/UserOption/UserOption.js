@@ -76,6 +76,7 @@ function UserOption({ hide }) {
         }),
       ).unwrap();
       reset();
+      onClose();
       setIsLoading(false);
       toast({
         position: 'bottom-left',

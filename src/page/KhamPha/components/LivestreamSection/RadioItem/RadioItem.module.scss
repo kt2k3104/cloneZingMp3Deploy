@@ -12,13 +12,13 @@
     cursor: pointer;
     position: relative;
     border-radius: 50%;
-    border-bottom-right-radius: 10%;
+    // border-bottom-right-radius: 10%;
 
     img {
       width: 99%;
       transition: transform 0.4s linear;
       border-radius: 50%;
-      border-bottom-right-radius: 30%;
+      // border-bottom-right-radius: 30%;
     }
     &:hover > .img_hover {
       opacity: 1;

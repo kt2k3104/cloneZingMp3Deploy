@@ -61,7 +61,8 @@ function NotifyMenu(attrs) {
     const hoursDifference = Math.floor(minutesDifference / 60);
     const daysDifference = Math.floor(hoursDifference / 24);
 
-    if (secondsDifference < 60) return `${secondsDifference} giây trước`;
+    if (secondsDifference < 10) return 'Vừa xong'
+    if (secondsDifference>=10 && secondsDifference < 60) return `${secondsDifference} giây trước`;
     if (minutesDifference < 60) return `${minutesDifference} phút trước`;
     if (hoursDifference < 24) return `${hoursDifference} giờ trước`;
     if (daysDifference >= 1) return `${daysDifference} ngày trước`;
