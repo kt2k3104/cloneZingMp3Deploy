@@ -19,12 +19,12 @@
   display: grid;
   div{
     background-color: #f7f7f7;
+    border-radius: 5px;
     @include flex();
     height: 12.9vh;
     img{
       max-width: 90%;
       max-height: 80%;
-      border-radius: 5px;
     }
   }  
   @include responsive($breakpoint: $breakpoint-xl) {
