@@ -106,7 +106,8 @@ function MenuSetting(attrs) {
                   <div className={cx('content-theme')}>
                     <figure className="image is-48x48">
                       <img
-                        src="https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/theme/purple.jpg"
+                        // src="https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/theme/purple.jpg"
+                        src="https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/theme/rose.jpg"
                         alt="theme"
                       />
                     </figure>
