@@ -71,7 +71,8 @@ function NotifyMenu(attrs) {
   return (
     <div className={cx('noti-menu')} tabIndex="-1" {...attrs}>
       <h1>Thông báo</h1>
-      {listNotify?.length === 0 && <h3>Không có thông báo</h3>}
+      <div>
+        {listNotify?.length === 0 && <h3>Không có thông báo</h3>}
       {listNotify?.map((item, index) => {
         return (
           <div key={index} className={cx('item_noti')}>
@@ -87,11 +88,12 @@ function NotifyMenu(attrs) {
               ]}
               autoEscape={true}
               textToHighlight={item.content}
-            />
+              />
             <span className={cx('time')}>{convertTime(item.created_at)}</span>
           </div>
         );
       })}
+      </div>
     </div>
   );
 }
