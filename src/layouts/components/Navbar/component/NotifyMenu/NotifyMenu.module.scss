@@ -10,7 +10,6 @@
   border-radius: 8px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
   z-index: 101;
-  max-height: 500px;
 
   h1 {
     padding: 10px;
@@ -20,7 +19,7 @@
     padding: 10px;
   }
   div{
-    max-height: 450px;
+    max-height: 500px;
     overflow-y: overlay;
     &::-webkit-scrollbar {
       width: 4px;
