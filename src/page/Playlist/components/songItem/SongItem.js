@@ -17,6 +17,7 @@ import customIcon from '~/components/UI/Icons/Icons';
 
 import { handleChangeFavoriteSong } from '~/page/Auth/UserSlice';
 import SongOtherOptions from '../songOtherOptions/SongOtherOptions';
+import images from '~/assets/images';
 
 const cx = classNames.bind(styles);
 
@@ -73,7 +74,7 @@ function SongItem({ song, playlistId, type }) {
               {isPlaying ? (
                 <img
                   style={{ width: '40%', height: '40%', borderRadius: 0 }}
-                  src="/assets/img/icon-playing.gif"
+                  src={images.playingImage}
                   alt="img"
                 />
               ) : (

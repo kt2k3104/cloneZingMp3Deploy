@@ -22,6 +22,7 @@ import { memo, useEffect, useState } from 'react';
 import SongOtherOptions from '../SongOtherOptions/SongOtherOptions';
 import customIcon from '~/components/UI/Icons/Icons';
 import { handleChangeFavoriteSong } from '~/page/Auth/UserSlice';
+import images from '~/assets/images';
 
 const cx = classNames.bind(styles);
 
@@ -105,7 +106,7 @@ function SongItem({ song, scroll, type }) {
               {isPlaying ? (
                 <img
                   style={{ width: '40%', height: '40%', borderRadius: 0 }}
-                  src="/assets/img/icon-playing.gif"
+                  src={images.playingImage}
                   alt="img"
                 />
               ) : (
