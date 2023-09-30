@@ -10,6 +10,7 @@ import { handleChangeFavoriteSong } from '~/page/Auth/UserSlice';
 import { memo, useState } from 'react';
 import Tippyy from '@tippyjs/react/headless';
 import SongOtherOptions from '~/page/ThuVien/components/SongOtherOptions/SongOtherOptions';
+import images from '~/assets/images';
 
 const cx = classNames.bind(styles);
 
@@ -64,7 +65,7 @@ function SongItem({ song, type }) {
                 {isPlaying ? (
                   <img
                     style={{ width: '40%', height: '40%', borderRadius: 0 }}
-                    src="/assets/img/icon-playing.gif"
+                    src={images.playingImage}
                     alt="img"
                   />
                 ) : (

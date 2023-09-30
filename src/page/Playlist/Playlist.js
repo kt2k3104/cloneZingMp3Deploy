@@ -19,6 +19,7 @@ import {
   setCurrentSong,
   setQueue,
 } from '~/layouts/components/PlayerControls/ListenSlice';
+import images from '~/assets/images';
 
 const cx = classNames.bind(styles);
 
@@ -106,7 +107,7 @@ function Playlist() {
                   border={'1px solid #fff'}
                   justifyContent={'center'}
                 >
-                  <Img sx={css.img2} src="/assets/img/icon-playing.gif" alt="img" />
+                  <Img sx={css.img2} src={images.playingImage} alt="img" />
                 </HStack>
               ) : (
                 <Box sx={css.box4}>

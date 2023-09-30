@@ -24,6 +24,7 @@ import MenuSetting from './component/MenuSetting';
 import UserOption from './component/UserOption';
 import NotifyMenu from './component/NotifyMenu';
 import { REACT_APP_API_URL } from '~/const';
+import images from '~/assets/images';
 
 const cx = classNames.bind(styles);
 
@@ -228,9 +229,7 @@ function Navbar() {
                 />
               )}
               {isLogined && user?.avatar !== null && <img src={user?.avatar} alt="img" />}
-              {isLogined && user?.avatar === null && (
-                <img src="/assets/img/no-image.png" alt="img" />
-              )}
+              {isLogined && user?.avatar === null && <img src={images.noImage} alt="img" />}
             </div>
           </Tippyy>
         </div>

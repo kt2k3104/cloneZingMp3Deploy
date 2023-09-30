@@ -12,6 +12,7 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faHeart as faHeartt } from '@fortawesome/free-regular-svg-icons';
 import { useState } from 'react';
 import SongOtherOptions from '../ThuVien/components/SongOtherOptions/SongOtherOptions';
+import images from '~/assets/images';
 
 const cx = classNames.bind(styles);
 
@@ -101,7 +102,7 @@ function Timkiem() {
                           {isPlaying ? (
                             <img
                               style={{ width: '40%', height: '40%', borderRadius: 0 }}
-                              src="/assets/img/icon-playing.gif"
+                              src={images.playingImage}
                               alt="img"
                             />
                           ) : (

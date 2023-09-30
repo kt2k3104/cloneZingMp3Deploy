@@ -26,6 +26,7 @@ import { Spinner, useToast } from '@chakra-ui/react';
 import { getSongs, handleUploadSong } from '../../../PlayerControls/ListenSlice';
 import requestApi from '~/helpers/api';
 import EditName from '../EditName/EditName';
+import images from '~/assets/images';
 
 const cx = classNames.bind(styles);
 
@@ -70,7 +71,7 @@ function UserOption({ hide }) {
           duration: Math.round(resDataSong.result.duration),
         }),
       ).unwrap();
-      
+
       reset();
       onClose();
       setIsLoading(false);
@@ -120,10 +121,10 @@ function UserOption({ hide }) {
                   <img src={user?.avatar} alt="img" />
                 )}
                 {isLogined && !isLoadingAvt && user?.avatar === null && (
-                  <img src="/assets/img/no-image.png" alt="img" />
+                  <img src={images.noImage} alt="img" />
                 )}
 
-                {isLoadingAvt && <img src="/assets/img/giphy.gif" alt="img" />}
+                {isLoadingAvt && <img src={images.loadingImage} alt="img" />}
                 {user.account_type === 'local' && !isLoadingAvt && (
                   <div className={cx('avt_hover')}>
                     <form>
