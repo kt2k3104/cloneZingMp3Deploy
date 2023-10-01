@@ -43,6 +43,10 @@
     width: 60px;
     height: 60px;
     cursor: pointer;
+    border-radius: 5px;
+    &:hover {
+      filter: brightness(55%);
+    }
   }
   .card_info {
     width: 100%;
