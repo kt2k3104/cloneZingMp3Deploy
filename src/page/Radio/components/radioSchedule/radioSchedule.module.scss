@@ -1,0 +1,74 @@
+@import '../../../../components/GlobalStyles/mixins.scss';
+@import '../../../../components/GlobalStyles/valiables.scss';
+
+.wrapper {
+  width: 100%;
+  margin-top: 48px;
+  @include flex($jutify: flex-start);
+}
+.left {
+  width: 108px;
+  height: 206px;
+  .header {
+    @include flex();
+    font-size: 14px;
+    height: 38px;
+    letter-spacing: 1px;
+    padding-left: 10px;
+    white-space: nowrap;
+  }
+  .body {
+    background-color: $alpha-bg;
+    border-radius: 8px 0 0 8px;
+    overflow: hidden;
+    @include flex($direction: column, $gap: 8px);
+    .card {
+      @include flex();
+      height: 80px;
+      width: 108px;
+      img {
+        height: 60px;
+        width: 60px;
+        border-radius: 999px;
+        cursor: pointer;
+        &:hover {
+          filter: brightness(55%);
+        }
+      }
+    }
+  }
+}
+
+.content {
+  margin-top: 46px;
+  width: 100%;
+}
+.media {
+  @include flex($jutify: flex-start, $gap: 8px);
+  width: 100%;
+  height: 80px;
+  margin-bottom: 8px;
+  margin-left: 8px;
+  padding: 8px;
+  background-color: $alpha-bg;
+  border-radius: 5px;
+  img {
+    height: 100%;
+    border-radius: 5px;
+  }
+  .media-content {
+    @include flex($direction: column, $align: left);
+    margin-bottom: auto;
+    .title {
+      @include text-style($size: 1.2rem, $weight: 600);
+      margin-bottom: 4px;
+      cursor: pointer;
+      &:hover {
+        color: $purple-primary;
+      }
+    }
+    .subtitle {
+      @include text-style($size: 1.2rem, $color: $text-secondary, $weight: 500);
+    }
+  }
+}
