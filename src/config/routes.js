@@ -9,7 +9,7 @@ const routes = {
   ngheganday: '/mymusic/history',
   playlists: '/mymusic/library/playlist',
   playlist: '/playlist/:playlistId',
-  timkiem: '/tim-kiem',
+  timkiem: '/tim-kiem/:songId',
   auth: '/auth',
   oauth: '/oauth/redirect',
 };

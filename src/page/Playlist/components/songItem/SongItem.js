@@ -49,7 +49,7 @@ function SongItem({ song, playlistId, type }) {
   };
 
   return (
-    <div className={cx('wrapper', currentSong.id === song.id ? 'isActive' : 'noActive')}>
+    <div className={cx('wrapper', currentSong.id === song?.id ? 'isActive' : 'noActive')}>
       <div className={cx('left')}>
         <FontAwesomeIcon className={cx('music_icon')} icon={faMusic} />
         <div
@@ -57,19 +57,19 @@ function SongItem({ song, playlistId, type }) {
           onClick={() => {
             if (type === 'PLAYLIST_SONG') dispatch(setQueue(playlist.songs));
 
-            if (song.id === currentSong.id && isPlaying) {
+            if (song?.id === currentSong.id && isPlaying) {
               dispatch(pauseSong());
-            } else if (song.id === currentSong.id && !isPlaying) {
+            } else if (song?.id === currentSong.id && !isPlaying) {
               dispatch(setCurrentSong(song));
               dispatch(playSong());
-            } else if (song.id !== currentSong.id) {
+            } else if (song?.id !== currentSong.id) {
               dispatch(setCurrentSong(song));
               dispatch(playSong());
             }
           }}
         >
-          <img src={song.artwork} alt="img" />
-          {currentSong.id === song.id && (
+          <img src={song?.artwork} alt="img" />
+          {currentSong.id === song?.id && (
             <div className={cx('song-thumb-active')}>
               {isPlaying ? (
                 <img
@@ -82,19 +82,19 @@ function SongItem({ song, playlistId, type }) {
               )}
             </div>
           )}
-          {currentSong.id !== song.id && (
+          {currentSong.id !== song?.id && (
             <div className={cx('song-thumb-active')}>
               <FontAwesomeIcon icon={faPlay} />
             </div>
           )}
         </div>
         <div className={cx('card-info')}>
-          <span>{song.name}</span>
-          <h3>{song.artist}</h3>
+          <span>{song?.name}</span>
+          <h3>{song?.artist}</h3>
         </div>
       </div>
       <div className={cx('center')}>
-        <span>{song.name + ' (Single)'}</span>
+        <span>{song?.name + ' (Single)'}</span>
       </div>
       <div className={cx('right')}>
         <Tippy content="MV">
@@ -109,10 +109,10 @@ function SongItem({ song, playlistId, type }) {
             <customIcon.IconKaraoke />
           </button>
         </Tippy>
-        {favoriteId.includes(song.id) ? (
+        {favoriteId.includes(song?.id) ? (
           <button
             onClick={() => {
-              dispatch(handleChangeFavoriteSong(song.id));
+              dispatch(handleChangeFavoriteSong(song?.id));
             }}
             className={cx('showInFav')}
           >
@@ -121,7 +121,7 @@ function SongItem({ song, playlistId, type }) {
         ) : (
           <button
             onClick={() => {
-              dispatch(handleChangeFavoriteSong(song.id));
+              dispatch(handleChangeFavoriteSong(song?.id));
             }}
           >
             <FontAwesomeIcon icon={faHeartt} />
@@ -146,7 +146,7 @@ function SongItem({ song, playlistId, type }) {
           </Tippy>
         </Tippyy>
 
-        <span className={cx('duration')}>{convertTime(song.duration)}</span>
+        <span className={cx('duration')}>{convertTime(song?.duration)}</span>
       </div>
     </div>
   );

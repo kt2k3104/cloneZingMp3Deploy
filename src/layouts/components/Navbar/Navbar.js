@@ -60,10 +60,8 @@ function Navbar() {
 
   useEffect(() => {
     if (value.trim()) {
-      console.log('search');
       const handleSearchSongs = async () => {
         const result = await axios.get(`${REACT_APP_API_URL}songs/search?keyword=${value}`);
-        console.log(result);
         setSearchResults(result.data.result);
       };
       handleSearchSongs();
@@ -154,7 +152,7 @@ function Navbar() {
                       setKeyword(e.target.value);
                     }}
                   />
-                  {isFocus && keyword && (
+                  {keyword && (
                     <button
                       onClick={() => {
                         setKeyword('');

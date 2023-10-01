@@ -3,10 +3,12 @@ import styles from './SearchResult.module.scss';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Highlighter from 'react-highlight-words';
+import { useNavigate } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
 function SearchResult({ attrs, searchResults, keyword, value, setKeyword, hide, setIsFocus }) {
+  const navigate = useNavigate();
   return (
     <div id="nav-search" className={cx('search-result')} tabIndex="-1" {...attrs}>
       <ul className={cx('suggest-list')}>
@@ -18,7 +20,15 @@ function SearchResult({ attrs, searchResults, keyword, value, setKeyword, hide, 
               {searchResults.map((item) => {
                 return (
                   <div>
-                    <li className={cx('suggest-item')}>
+                    <li
+                      onClick={(e) => {
+                        setKeyword(item.name);
+                        hide();
+                        setIsFocus(false);
+                        navigate(`/tim-kiem/${item.id}`, { replace: false, relative: 'path' });
+                      }}
+                      className={cx('suggest-item')}
+                    >
                       <FontAwesomeIcon icon={faSearch} />
                       <div className={cx('is-oneline')}>
                         <Highlighter

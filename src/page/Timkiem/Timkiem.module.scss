@@ -26,10 +26,11 @@
   }
 }
 
+.section_2,
 .section_1 {
   width: 100%;
 
-  h3 {
+  .section-title {
     @include text-style($size: 2rem, $weight: 700);
     margin-bottom: 20px;
   }
@@ -157,4 +158,8 @@
     opacity: 1;
     color: $purple-primary;
   }
+}
+
+.section_2 {
+  margin-top: 30px;
 }

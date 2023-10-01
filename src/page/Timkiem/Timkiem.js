@@ -1,51 +1,22 @@
 import styles from './Timkiem.module.scss';
 import classNames from 'classnames/bind';
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Box, TabIndicator } from '@chakra-ui/react';
-import { useDispatch, useSelector } from 'react-redux';
-import { playSong, setCurrentSong } from '~/layouts/components/PlayerControls/ListenSlice';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsis, faPlay } from '@fortawesome/free-solid-svg-icons';
-import Tippy from '@tippyjs/react';
-import Tippyy from '@tippyjs/react/headless';
-import { handleChangeFavoriteSong } from '../Auth/UserSlice';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
-import { faHeart as faHeartt } from '@fortawesome/free-regular-svg-icons';
-import { useState } from 'react';
-import SongOtherOptions from '../ThuVien/components/SongOtherOptions/SongOtherOptions';
-import images from '~/assets/images';
+
+import OutstandingItem from './components/outstandingItem';
+import SongItem from '../Playlist/components/songItem/SongItem';
+import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const cx = classNames.bind(styles);
 
 function Timkiem() {
-  const { isPlaying, currentSong, pauseSong } = useSelector((state) => state.listen);
-  const { favoriteId } = useSelector((state) => state.user);
-  const dispatch = useDispatch();
-  const [isVisible, setIsVisible] = useState(false);
-  const show = () => setIsVisible(true);
-  const hide = () => setIsVisible(false);
-  const song = {
-    id: 21,
-    name: '3 1 0 7 - 2',
-    artwork:
-      'http://res.cloudinary.com/dc4vad8tx/image/upload/v1693882486/musicapp-nest/images/artworks/nfkmlzmidlr4lnoshlwd.webp',
-    artist: 'Duongg, W/N, Nâu',
-    duration: 268,
-    url: 'http://res.cloudinary.com/dc4vad8tx/video/upload/v1693882484/musicapp-nest/audios/y6guainjorrmfqyllebr.mp3',
-    created_at: '2023-09-04T19:54:47.142Z',
-    updated_at: '2023-09-04T19:54:47.142Z',
-    user: {
-      id: 1,
-      first_name: 'Trần',
-      last_name: 'Đức Khải',
-      email: 'khai@gmail.com',
-      avatar: null,
-      role: 'user',
-      account_type: 'local',
-      created_at: '2023-08-19T05:56:39.623Z',
-      updated_at: '2023-08-19T05:56:39.623Z',
-    },
-    likedUsers: 1,
-  };
+  const { allSongs } = useSelector((state) => state.listen);
+  const { songId } = useParams();
+  let song = null;
+  allSongs.forEach((item) => {
+    if (item.id === Number(songId)) song = item;
+  });
+
   return (
     <div className={cx('wrapper')}>
       <Tabs w={'100%'} h={'100%'} minW={'768px'} variant="enclosed" sx={css.tabs}>
@@ -76,92 +47,16 @@ function Timkiem() {
         <TabPanels w={'100%'} h={'100%'} minW={'768px'} p={{ base: '28px 29px', lg: '28px 59px' }}>
           <TabPanel minW={'768px'} w={'100%'} h={'100%'} p={'0'}>
             <div className={cx('section_1')}>
-              <h3>Nổi Bật</h3>
+              <h3 className={cx('section-title')}>Nổi Bật</h3>
               <div className={cx('section_1_content')}>
-                <div className={cx('section_1_content1')}>
-                  <div className={cx('left')}>
-                    <div
-                      className={cx('song-thumb')}
-                      onClick={() => {
-                        // if (type === 'PLAYLIST_SONG') dispatch(setQueue(playlist.songs));
-
-                        if (song.id === currentSong.id && isPlaying) {
-                          dispatch(pauseSong());
-                        } else if (song.id === currentSong.id && !isPlaying) {
-                          dispatch(setCurrentSong(song));
-                          dispatch(playSong());
-                        } else if (song.id !== currentSong.id) {
-                          dispatch(setCurrentSong(song));
-                          dispatch(playSong());
-                        }
-                      }}
-                    >
-                      <img src={song.artwork} alt="img" />
-                      {currentSong.id === song.id && (
-                        <div className={cx('song-thumb-active')}>
-                          {isPlaying ? (
-                            <img
-                              style={{ width: '40%', height: '40%', borderRadius: 0 }}
-                              src={images.playingImage}
-                              alt="img"
-                            />
-                          ) : (
-                            <FontAwesomeIcon icon={faPlay} />
-                          )}
-                        </div>
-                      )}
-                      {currentSong.id !== song.id && (
-                        <div className={cx('song-thumb-active')}>
-                          <FontAwesomeIcon icon={faPlay} />
-                        </div>
-                      )}
-                    </div>
-                    <div className={cx('card-info')}>
-                      <span>{song.name}</span>
-                      <h3>{song.artist}</h3>
-                    </div>
-                  </div>
-                  <div className={cx('right')}>
-                    {favoriteId.includes(song.id) ? (
-                      <button
-                        onClick={() => {
-                          dispatch(handleChangeFavoriteSong(song.id));
-                        }}
-                        className={cx('showInFav')}
-                      >
-                        <FontAwesomeIcon className={cx('heart_purple')} icon={faHeart} />
-                      </button>
-                    ) : (
-                      <button
-                        onClick={() => {
-                          dispatch(handleChangeFavoriteSong(song.id));
-                        }}
-                      >
-                        <FontAwesomeIcon icon={faHeartt} />
-                      </button>
-                    )}
-
-                    <Tippyy
-                      interactive
-                      placement="left"
-                      visible={isVisible}
-                      // trigger="mouseenter"
-                      onClickOutside={hide}
-                      offset={[0, 0]}
-                      render={(attrs) => <SongOtherOptions hide={hide} song={song} attrs={attrs} />}
-                    >
-                      <Tippy content="Khác">
-                        <button
-                          className={cx('btn_option', 'dfnone')}
-                          onClick={isVisible ? hide : show}
-                        >
-                          <FontAwesomeIcon icon={faEllipsis} />
-                        </button>
-                      </Tippy>
-                    </Tippyy>
-                  </div>
-                </div>
+                <OutstandingItem song={song} type={'SONG'} />
+                <OutstandingItem song={song} type={'ALBUM'} />
+                <OutstandingItem song={song} type={'ARTIST'} />
               </div>
+            </div>
+            <div className={cx('section_2')}>
+              <h3 className={cx('section-title')}>Nổi Bật</h3>
+              <SongItem song={song} />
             </div>
           </TabPanel>
           <TabPanel></TabPanel>

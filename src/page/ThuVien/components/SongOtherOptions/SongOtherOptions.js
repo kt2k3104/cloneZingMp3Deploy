@@ -60,11 +60,11 @@ function SongOtherOptions({ attrs, song, hide, type }) {
     <div className={cx('song_other_option')} tabIndex="-1" {...attrs}>
       <div className={cx('song-info')}>
         <div className={cx('song-thumb')}>
-          <img src={song.artwork} alt="img" />
+          <img src={song?.artwork} alt="img" />
         </div>
         <div className={cx('card-info')}>
-          <span>{song.name}</span>
-          <h3>{song.artist}</h3>
+          <span>{song?.name}</span>
+          <h3>{song?.artist}</h3>
         </div>
       </div>
       <div className={cx('list_btn')}>
@@ -279,7 +279,7 @@ function SongOtherOptions({ attrs, song, hide, type }) {
                     sx={css.button2}
                     onClick={async () => {
                       setOnDelete(true);
-                      await dispatch(deleteSong(song.id)).unwrap();
+                      await dispatch(deleteSong(song?.id)).unwrap();
                       setOnDelete(false);
                       onCloseModaDelete();
                       toast({
