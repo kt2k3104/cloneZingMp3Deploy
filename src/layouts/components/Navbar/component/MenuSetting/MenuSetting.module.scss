@@ -186,10 +186,10 @@
       border-radius: 4px;
       background: linear-gradient(
         to right,
-        var(--progressbar-active-bg) 0%,
-        var(--progressbar-active-bg) 50%,
-        var(--progressbar-player-bg) 50%,
-        var(--progressbar-player-bg) 100%
+        $progressbar-active-bg 0%,
+        $progressbar-active-bg 50%,
+        $progressbar-player-bg 50%,
+        $progressbar-player-bg 100%
       );
       align-self: center;
     }
