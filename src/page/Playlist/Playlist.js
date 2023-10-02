@@ -92,10 +92,10 @@ function Playlist() {
             )}
             {playlist?.songs?.length > 3 && (
               <Box sx={css.box3}>
-                <Image src={playlist?.songs[0].artwork} alt="img" />
-                <Image src={playlist?.songs[1].artwork} alt="img" />
-                <Image src={playlist?.songs[2].artwork} alt="img" />
-                <Image src={playlist?.songs[3].artwork} alt="img" />
+                <Image w={'100%'} src={playlist?.songs[0].artwork} alt="img" />
+                <Image w={'100%'} src={playlist?.songs[1].artwork} alt="img" />
+                <Image w={'100%'} src={playlist?.songs[2].artwork} alt="img" />
+                <Image w={'100%'} src={playlist?.songs[3].artwork} alt="img" />
               </Box>
             )}
             <Stack sx={css.stack2}>
