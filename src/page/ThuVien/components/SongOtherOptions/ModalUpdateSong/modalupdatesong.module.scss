@@ -8,6 +8,10 @@
   .div {
     @include flex($gap: 10px);
     width: 100%;
+
+    option {
+      background-color: #34224f;
+    }
   }
 
   input {
