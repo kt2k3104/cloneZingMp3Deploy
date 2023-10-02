@@ -43,7 +43,9 @@ function ModalAddPlaylist({ isOpen, onClose, song }) {
   } = useForm();
   const onSubmitUpdateSong = async (data) => {
     try {
-      await dispatch(editSong({ songId: song.id, data: { name: data.songName } })).unwrap();
+      await dispatch(
+        editSong({ songId: song.id, data: { name: data.songName, artist: data.songArtist } }),
+      ).unwrap();
       await dispatch(getUser(user.id)).unwrap();
       reset();
       toast({
