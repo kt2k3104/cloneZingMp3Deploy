@@ -79,10 +79,10 @@ function PlaylistItem({ playlist, scroll }) {
           )}
           {playlist?.songs?.length > 3 && (
             <Box className={cx('imggg')} sx={css.box3}>
-              <Img src={playlist?.songs[0].artwork} alt="img" />
-              <Img src={playlist?.songs[1].artwork} alt="img" />
-              <Img src={playlist?.songs[2].artwork} alt="img" />
-              <Img src={playlist?.songs[3].artwork} alt="img" />
+              <Img w={'100%'} src={playlist?.songs[0].artwork} alt="img" />
+              <Img w={'100%'} src={playlist?.songs[1].artwork} alt="img" />
+              <Img w={'100%'} src={playlist?.songs[2].artwork} alt="img" />
+              <Img w={'100%'} src={playlist?.songs[3].artwork} alt="img" />
             </Box>
           )}
         </div>
