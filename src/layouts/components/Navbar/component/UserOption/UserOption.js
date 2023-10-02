@@ -23,7 +23,7 @@ import Tippy from '@tippyjs/react';
 import { useState } from 'react';
 import { Spinner, useToast } from '@chakra-ui/react';
 
-import { getSongs, handleUploadSong } from '../../../PlayerControls/ListenSlice';
+import { getSongs, handleUploadSong, pauseSong } from '../../../PlayerControls/ListenSlice';
 import requestApi from '~/helpers/api';
 import EditName from '../EditName/EditName';
 import images from '~/assets/images';
@@ -299,6 +299,7 @@ function UserOption({ hide }) {
           <li
             onClick={() => {
               dispatch(setLogout());
+              dispatch(pauseSong());
               navigate('/');
               hide();
             }}

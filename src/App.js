@@ -20,16 +20,16 @@ function App() {
       }
     };
     handleGetSongs();
+  }, [dispatch]);
 
+  useEffect(() => {
     const handleCheckedUserLogin = () => {
       if (localStorage.getItem('access_token')) {
         dispatch(handleInitLogin());
       }
     };
     handleCheckedUserLogin();
-  }, [dispatch, isLogined]);
 
-  useEffect(() => {
     const handleGetPlaylist = () => {
       if (isLogined) {
         dispatch(getPlaylists());

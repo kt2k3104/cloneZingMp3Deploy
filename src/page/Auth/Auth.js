@@ -8,6 +8,7 @@ import { handleInitLogin, handleLogin } from './UserSlice';
 import { useNavigate } from 'react-router-dom';
 import customIcon from '~/components/UI/Icons/Icons';
 import { REACT_APP_API_URL } from '~/const';
+import { Box, useToast } from '@chakra-ui/react';
 
 const cx = classNames.bind(styles);
 
@@ -27,6 +28,8 @@ function Auth() {
     setError,
     clearErrors,
   } = useForm();
+
+  const toast = useToast();
 
   const onSubmitLogin = async (data) => {
     try {
@@ -64,6 +67,15 @@ function Auth() {
         setIsSignup(false);
       }
       reset();
+      toast({
+        position: 'top',
+        render: () => (
+          <Box color="white" p={5} bg="#4c7cff" borderRadius={'5px'} mt={'30px'}>
+            Đăng ký thành công!
+          </Box>
+        ),
+        duration: 1000,
+      });
     } catch (error) {
       console.log(error);
       if (error.message.includes('ER_EMAIL_HAD_ACC')) {
@@ -75,14 +87,12 @@ function Auth() {
   };
 
   const onSubmitChangePassword = (data) => {
-    console.log(data.confirmpassword);
-    console.log(data.password);
     if (data.confirmpassword !== data.password) {
       setError('UNDUPLICATE_PASSWORD', {
         type: 'unduplicatepassword',
       });
     }
-    // setIsForgotPassword(false);
+    setIsForgotPassword(false);
   };
 
   const handleLoginWithGoogle = () => {
