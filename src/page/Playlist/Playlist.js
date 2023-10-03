@@ -190,7 +190,7 @@ function Playlist() {
             </div>
           )}
           {playlist?.songs?.length > 0 && (
-            <>
+            <div className={cx('list_song')}>
               <div className={cx('media-playlist-header')}>
                 <span className={cx('span1')}>BÀI HÁT</span>
                 <span className={cx('span2')}>ALBUM</span>
@@ -207,7 +207,7 @@ function Playlist() {
                   />
                 );
               })}
-            </>
+            </div>
           )}
         </Box>
       </Stack>
