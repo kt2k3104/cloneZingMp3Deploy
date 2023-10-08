@@ -15,6 +15,7 @@ const cx = classNames.bind(styles);
 function Auth() {
   const [isForgotPassword, setIsForgotPassword] = useState(false);
   const [isSignup, setIsSignup] = useState(false);
+  const [password, setPassword] = useState('');
 
   const dispatch = useDispatch();
 
@@ -150,8 +151,10 @@ function Auth() {
                 name="password"
                 id="password"
                 placeholder="Password"
+                value={password}
                 {...register('password', { required: true, minLength: 6 }, 'ER_PASS_IN_COR')}
-                onChange={() => {
+                onChange={(e) => {
+                  setPassword(e.target.value);
                   if (errors.ER_PASS_IN_COR) clearErrors('ER_PASS_IN_COR');
                 }}
               />
@@ -168,6 +171,7 @@ function Auth() {
               </span>
               <button type="submit">Đăng nhập</button>
               <button
+                type="button"
                 onClick={() => {
                   setIsSignup(true);
                 }}
