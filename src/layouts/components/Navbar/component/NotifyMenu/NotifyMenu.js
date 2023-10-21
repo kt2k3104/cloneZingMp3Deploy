@@ -61,8 +61,8 @@ function NotifyMenu(attrs) {
     const hoursDifference = Math.floor(minutesDifference / 60);
     const daysDifference = Math.floor(hoursDifference / 24);
 
-    if (secondsDifference < 10) return 'Vừa xong'
-    if (secondsDifference>=10 && secondsDifference < 60) return `${secondsDifference} giây trước`;
+    if (secondsDifference < 10) return 'Vừa xong';
+    if (secondsDifference >= 10 && secondsDifference < 60) return `${secondsDifference} giây trước`;
     if (minutesDifference < 60) return `${minutesDifference} phút trước`;
     if (hoursDifference < 24) return `${hoursDifference} giờ trước`;
     if (daysDifference >= 1) return `${daysDifference} ngày trước`;
@@ -73,26 +73,26 @@ function NotifyMenu(attrs) {
       <h1>Thông báo</h1>
       <div>
         {listNotify?.length === 0 && <h3>Không có thông báo</h3>}
-      {listNotify?.map((item, index) => {
-        return (
-          <div key={index} className={cx('item_noti')}>
-            <Highlighter
-              highlightStyle={{
-                fontWeight: 'bold',
-                color: '#dadada',
-                backgroundColor: 'transparent',
-              }}
-              searchWords={[
-                item.content.split('đã thêm bài')[0],
-                item.content.split('đã thêm bài')[1].split('vào danh sách yêu thích')[0],
-              ]}
-              autoEscape={true}
-              textToHighlight={item.content}
+        {listNotify?.map((item, index) => {
+          return (
+            <div key={index} className={cx('item_noti')}>
+              <Highlighter
+                highlightStyle={{
+                  fontWeight: 'bold',
+                  color: '#dadada',
+                  backgroundColor: 'transparent',
+                }}
+                searchWords={[
+                  item.content.split('đã thêm bài')[0],
+                  item.content.split('đã thêm bài')[1].split('vào danh sách yêu thích')[0],
+                ]}
+                autoEscape={true}
+                textToHighlight={item.content}
               />
-            <span className={cx('time')}>{convertTime(item.created_at)}</span>
-          </div>
-        );
-      })}
+              <span className={cx('time')}>{convertTime(item.created_at)}</span>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

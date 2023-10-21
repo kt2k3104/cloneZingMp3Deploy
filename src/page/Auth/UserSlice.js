@@ -207,7 +207,7 @@ const userSlice = createSlice({
         state.queueFavorite = action.payload.favoriteSongs;
       })
       .addCase(handleChangeFavoriteSong.fulfilled, (state, action) => {
-        state.queueFavorite = action.payload.data.response.favoriteSongs;
+        state.queueFavorite = action.payload.data?.response.favoriteSongs;
         state.favoriteId = [];
         state.queueFavorite.forEach((song) => {
           state.favoriteId.push(song.id);
@@ -242,7 +242,7 @@ const userSlice = createSlice({
       .addCase(handleRemoveSongToPlaylist.fulfilled, (state, action) => {
         state.playlists.forEach((playlist) => {
           if (playlist.id === action.payload.id) {
-            playlist.songs = action.songs;
+            playlist.songs = action.payload.songs;
           }
         });
       })
