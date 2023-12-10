@@ -29,7 +29,7 @@ export const getSongs = createAsyncThunk('listen/getSongs', async (_, thunkAPI) 
     const response = await axios.get(`${REACT_APP_API_URL}songs`);
     return response.data.result;
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.response.data);
+    return thunkAPI.rejectWithValue(error);
   }
 });
 
@@ -51,7 +51,7 @@ export const deleteSong = createAsyncThunk('listen/deleteSong', async (reqData, 
     const response = await requestApi(`songs/${reqData}`, 'DELETE');
     console.log(response);
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.response.data);
+    return thunkAPI.rejectWithValue(error);
   }
 });
 

@@ -12,6 +12,7 @@ const routes = {
   timkiem: '/tim-kiem/:songId',
   auth: '/auth',
   oauth: '/oauth/redirect',
+  callOathAPI: '/oauth/callapi',
 };
 
 export default routes;

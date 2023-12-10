@@ -17,6 +17,7 @@ import Playlists from '~/page/Playlists';
 import Timkiem from '~/page/Timkiem';
 import Auth from '~/page/Auth';
 import OAuth from '~/page/OAuth';
+import CallOauthAPI from '~/page/CallOauthAPI';
 
 // Public routes
 const publicRoutes = [
@@ -33,6 +34,7 @@ const publicRoutes = [
   { path: config.routes.timkiem, component: Timkiem },
   { path: config.routes.auth, component: Auth },
   { path: config.routes.oauth, component: OAuth, layout: OAuthLayout },
+  { path: config.routes.callOathAPI, component: CallOauthAPI, layout: OAuthLayout },
 ];
 
 const privateRoutes = [];

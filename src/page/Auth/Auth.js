@@ -100,11 +100,18 @@ function Auth() {
     let timer = null;
     const googleLoginURL = `${REACT_APP_API_URL}auth/google/login`;
 
+    console.log(googleLoginURL);
+
     const newWindow = window.open(
       googleLoginURL,
+      // 'oauth/callapi',
       '_blank',
       'top=100,left=525,width=500,height=600',
     );
+
+    // window.location.href = `${REACT_APP_API_URL}auth/google/login`;
+
+    console.log(newWindow);
 
     if (newWindow) {
       timer = setInterval(() => {
